@@ -112,3 +112,7 @@
         -   `ui/`: Primitivas visuales (`FadeIn`, `RacingBackground`, `DiagonalStripes`, `RacingCardContainer`, `button`, `card`).
     -   **Limpieza:** Se eliminaron archivos redundantes y se actualizaron todas las importaciones para reflejar la nueva arquitectura.
     -   **Verificación:** Build exitoso (`npm run build`) confirmando la integridad de las rutas.
+    -   **GIT:** Repositorio inicializado y subido a GitHub (`https://github.com/indioDarwinFreud/emperatriz.git`).
+    -   **Deploy:** Sitio publicado en Render (`https://emperatriz-grafica.onrender.com/`).
+
+

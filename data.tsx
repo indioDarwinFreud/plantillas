@@ -1,5 +1,5 @@
 
-import { HomeIcon, Store, Users, Mail, MessageSquareQuote, Palette, ShieldCheck, Truck } from "lucide-react";
+import { HomeIcon, Store, Users, Mail, MessageSquareQuote, Palette, ShieldCheck, Truck, Facebook, Instagram, Phone, MapPin } from "lucide-react";
 
 export const itemsNavbar = [
     {
@@ -332,5 +332,45 @@ export const featuresData = [
         description: "Recibí tu pedido donde estés. Trabajamos con los correos más confiables.",
         image: "/FeatureCard/ximena.jpeg",
         imagePosition: "center"
+    }
+];
+
+// Contact Data with Social Media
+
+export const contactData = [
+    {
+        id: 1,
+        icon: Mail,
+        title: "Email",
+        description: "emperatriztallergrafico@gmail.com",
+        href: "mailto:emperatriztallergrafico@gmail.com"
+    },
+    {
+        id: 2,
+        icon: Phone,
+        title: "Teléfono",
+        description: "+54 9 261 270-0341",
+        href: "https://wa.me/5492612700341"
+    },
+    {
+        id: 3,
+        icon: MapPin,
+        title: "Ubicación",
+        description: "Mendoza, Argentina",
+        href: "https://maps.google.com/?q=Mendoza,Argentina"
+    },
+    {
+        id: 4,
+        icon: Facebook,
+        title: "Facebook",
+        description: "/EmperatrizGrafica",
+        href: "https://www.facebook.com/"
+    },
+    {
+        id: 5,
+        icon: Instagram,
+        title: "Instagram",
+        description: "@emperatriz_grafica",
+        href: "https://www.instagram.com/"
     }
 ];

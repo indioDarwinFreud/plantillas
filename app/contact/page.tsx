@@ -2,12 +2,13 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Mail, MapPin, Phone, User, MessageSquare, Send } from "lucide-react";
+import { User, MessageSquare, Send } from "lucide-react";
 
 import FadeIn from "@/components/ui/FadeIn";
 
 import { RacingCardContainer } from "@/components/ui/RacingCardContainer";
 import { InfoCard } from "@/components/cards/InfoCard";
+import { contactData } from "@/data";
 
 export default function ContactPage() {
     const [name, setName] = useState("");
@@ -90,28 +91,18 @@ export default function ContactPage() {
                         </RacingCardContainer>
                     </FadeIn>
 
-                    <div className="space-y-6">
-                        <FadeIn delay={0.4} direction="right">
-                            <InfoCard
-                                icon={Mail}
-                                title="Email"
-                                description="emperatriztallergrafico@gmail.com"
-                            />
-                        </FadeIn>
-                        <FadeIn delay={0.5} direction="right">
-                            <InfoCard
-                                icon={Phone}
-                                title="Teléfono"
-                                description="+54 9 261 270-0341"
-                            />
-                        </FadeIn>
-                        <FadeIn delay={0.6} direction="right">
-                            <InfoCard
-                                icon={MapPin}
-                                title="Ubicación"
-                                description="Mendoza, Argentina"
-                            />
-                        </FadeIn>
+                    <div className="flex flex-col gap-2 h-full justify-between">
+                        {contactData.map((item) => (
+                            <FadeIn key={item.id} delay={0.2 + (item.id * 0.1)} direction="right" className="w-full flex-1">
+                                <InfoCard
+                                    icon={item.icon}
+                                    title={item.title}
+                                    description={item.description}
+                                    href={item.href}
+                                    compact={true}
+                                />
+                            </FadeIn>
+                        ))}
                     </div>
                 </div>
             </div>
