@@ -27,7 +27,7 @@ const BannerCard = ({ title, description }: BannerCardProps) => {
           </h2>
 
           {/* 📱 MOBILE: text-xs | 💻 PC: md:text-xl */}
-          <p className="text-white/90 text-xs md:text-xl font-medium drop-shadow-md line-clamp-2">
+          <p className="text-white/95 text-xs md:text-xl font-medium drop-shadow-md line-clamp-2">
             {description}
           </p>
         </div>
