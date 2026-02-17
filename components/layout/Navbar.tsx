@@ -10,7 +10,7 @@ const Navbar = () => {
     return (
         <div className="fixed z-50 flex flex-col items-center justify-center w-full mt-auto h-max bottom-10">
             <nav>
-                <div className="flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-black/20 backdrop-blur-2xl border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+                <div className="flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-black/80 backdrop-blur-2xl border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
                     {itemsNavbar.map((item) => (
                         <div key={item.id}
                             className={`px-3 py-2 transition-all duration-300 relative group
