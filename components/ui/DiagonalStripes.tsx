@@ -4,7 +4,7 @@ const DiagonalStripes = ({ className }: { className?: string }) => {
     return (
         // 📱 MOBILE: skew-x-[45deg] (Less steep) | 💻 PC: skew-x-[80deg] (Very steep)
         // 📱 MOBILE: skew-x-[75deg] (Adjusted for "flat" look) | 💻 PC: skew-x-[80deg]
-        <div className={`absolute top-0 bottom-0 left-12 w-full flex transform skew-x-[70deg] md:skew-x-[80deg] origin-bottom overflow-hidden pointer-events-none ${className}`}>
+        <div className={`absolute bottom-0 left-0 w-full h-20 flex overflow-hidden pointer-events-none ${className}`}>
             {/* Bloque Naranja Principal */}
             <div className="h-full flex-1 bg-primary/95 shadow-2xl relative border-r-4 border-black/20">
                 <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-30" />

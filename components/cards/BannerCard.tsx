@@ -14,15 +14,15 @@ const BannerCard = ({ title, description }: BannerCardProps) => {
     <div className="absolute inset-0 pointer-events-none flex items-end">
       <DiagonalStripes />
       {/* banda inferior tipo placa gráfica */}
-      <div className="w-full h-20 relative overflow-hidden">
+      <div className="w-full h-40 relative overflow-hidden">
 
 
 
 
         {/* contenido del texto */}
-        <div className="relative h-full px-2 flex flex-col justify-center z-10 max-w-3xl">
+        <div className="relative h-full px- flex flex-col justify-center z-10 max-w-3xl">
           {/* 📱 MOBILE: text-2xl | 💻 PC: md:text-5xl */}
-          <h2 className="text-2xl md:text-5xl font-black text-darkBg tracking-wide drop-shadow-lg uppercase stroke-black">
+          <h2 className="text-2xl md:text-6xl font-black text-darkBg tracking-wide drop-shadow-lg uppercase stroke-black">
             {title}
           </h2>
 
