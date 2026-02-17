@@ -216,7 +216,7 @@ export const productsData = [
         title: "Banner de 3m x 1,5m",
         location: "3m x 1,5m",
         description: "Ideal para escenarios, eventos grandes y promociones principales que requieren máxima visibilidad.",
-        image: "/Product/Altoque.jpeg",
+        image: "/Product/3mx1_5mBanner.jpeg",
         category: "Banner",
         website: "/contact"
     },
