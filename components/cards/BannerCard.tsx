@@ -11,26 +11,16 @@ interface BannerCardProps {
 
 const BannerCard = ({ title, description }: BannerCardProps) => {
   return (
-    <div className="absolute inset-0 pointer-events-none flex items-end">
-      <DiagonalStripes />
-      {/* banda inferior tipo placa gráfica */}
-      <div className="w-full h-40 relative overflow-hidden">
+    <div className="absolute bottom-8 left-0 md:left-8 z-10 max-w-[90%] md:max-w-2xl">
+      {/* Contenedor tipo "FeatureCard" Description: Fondo semitransparente + Blur */}
+      <div className="flex flex-col items-start gap-2">
+        <h2 className="bg-primary/90 text-white px-4 py-1 text-2xl md:text-5xl font-black tracking-wide uppercase skew-x-[-10deg] shadow-lg inline-block backdrop-blur-sm">
+          {title}
+        </h2>
 
-
-
-
-        {/* contenido del texto */}
-        <div className="relative h-full px-2 flex flex-col justify-center z-10 max-w-3xl">
-          {/* 📱 MOBILE: text-2xl | 💻 PC: md:text-5xl */}
-          <h2 className="text-2xl md:text-6xl font-black text-darkBg tracking-wide drop-shadow-lg uppercase stroke-black">
-            {title}
-          </h2>
-
-          {/* 📱 MOBILE: text-xs | 💻 PC: md:text-xl */}
-          <p className="text-white/95 text-xs md:text-xl font-medium drop-shadow-md line-clamp-2">
-            {description}
-          </p>
-        </div>
+        <p className="bg-black/60 text-white/95 px-4 py-2 text-xs md:text-lg font-medium backdrop-blur-md rounded-r-xl border-l-4 border-primary shadow-md inline-block max-w-prose">
+          {description}
+        </p>
       </div>
     </div>
   );
