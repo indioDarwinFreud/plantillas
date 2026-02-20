@@ -30,7 +30,7 @@ export default function Home() {
 
 
       {/* Testimonials Preview Section */}
-      <div className="mt-32 mb-20">
+{/*     <div className="mt-32 mb-20">
         <FadeIn>
           <h2 className="text-3xl md:text-5xl font-bold text-center mb-12 text-primary">
             Lo que dicen nuestros <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400 drop-shadow-sm">Clientes</span>
@@ -38,7 +38,7 @@ export default function Home() {
         </FadeIn>
 
       </div>
-
+*/}
     </main>
   );
 }
