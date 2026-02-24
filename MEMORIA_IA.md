@@ -143,4 +143,14 @@
 
 *   **19/02/2026:** (Próximos Pasos) Verificación final de propagación DNS y activación de SSL en Vercel.
 
+*   **23/02/2026:** Actualización de imágenes del catálogo de Banderas y creación del Footer global.
+    -   **Data (Imágenes):** Se reemplazaron las imágenes de placeholder (`Naza18.jpeg`, `Lolo18.jpeg`) por las fotos reales correspondientes a cada medida de bandera en `data.tsx` (desde 2m hasta 10m, archivos como `2x1_5mBandera.jpeg`, etc.).
+    -   **Data (businessHours):** Se agregó el export `businessHours` a `data.tsx` con los horarios del taller: Lunes a Viernes 9:00–18:00, Sábados 9:30–13:30.
+    -   **Componente Footer (`components/layout/Footer.tsx`):** Creación de un Footer minimalista y elegante en 3 columnas. Se aplicó una estética **premium** (fondo glassmorphism oscuro \`bg-neutral-950/80\`, acentos dorados/rojizos, texto degradado y efectos glow al hacer hover):
+        -   Izquierda: Dirección con detalles iluminados.
+        -   Centro: Marca Emperatriz (Cinzel en gradiente metálico) y botones sutiles para Redes Sociales con efecto glow.
+        -   Derecha: Horarios de atención.
+        -   Firma: Copyright con el año actual y link destacado a "Imperia Virtual" en la base.
+    -   **Integración Global (`app/layout.tsx`):** Se importó y añadió `<Footer />` al final del layout global, para que aparezca en todas las páginas del sitio.
+
 

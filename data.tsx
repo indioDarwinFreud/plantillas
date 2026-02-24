@@ -374,3 +374,8 @@ export const contactData = [
         href: "https://www.instagram.com/emperatriz.tallergrafico/"
     }
 ];
+
+export const businessHours = [
+    { day: "Lunes a Viernes", hours: "9:00 - 13:00 / 17:00 - 20:00" },
+    { day: "Sáb., Dom. y Feriados", hours: "Cerrado" }
+];
