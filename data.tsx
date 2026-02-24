@@ -134,7 +134,7 @@ export const productsData = [
         title: "Banderas de tamaño personalizado",
         location: "?m x ?m",
         description: "Personaliza el tamaño de tu bandera según tus necesidades.",
-        image: "/Product/Lolo18.jpeg",
+        image: "/Product/Perzonalizado.jpeg",
         category: "Bandera",
         website: "/contact"
     },
