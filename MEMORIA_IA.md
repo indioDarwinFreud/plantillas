@@ -144,13 +144,15 @@
 *   **19/02/2026:** (Próximos Pasos) Verificación final de propagación DNS y activación de SSL en Vercel.
 
 *   **23/02/2026:** Actualización de imágenes del catálogo de Banderas y creación del Footer global.
-    -   **Data (Imágenes):** Se reemplazaron las imágenes de placeholder (`Naza18.jpeg`, `Lolo18.jpeg`) por las fotos reales correspondientes a cada medida de bandera en `data.tsx` (desde 2m hasta 10m, archivos como `2x1_5mBandera.jpeg`, etc.).
-    -   **Data (businessHours):** Se agregó el export `businessHours` a `data.tsx` con los horarios del taller: Lunes a Viernes 9:00–18:00, Sábados 9:30–13:30.
-    -   **Componente Footer (`components/layout/Footer.tsx`):** Creación de un Footer minimalista y elegante en 3 columnas. Se aplicó una estética **premium** (fondo glassmorphism oscuro \`bg-neutral-950/80\`, acentos dorados/rojizos, texto degradado y efectos glow al hacer hover):
-        -   Izquierda: Dirección con detalles iluminados.
-        -   Centro: Marca Emperatriz (Cinzel en gradiente metálico) y botones sutiles para Redes Sociales con efecto glow.
-        -   Derecha: Horarios de atención.
-        -   Firma: Copyright con el año actual y link destacado a "Imperia Virtual" en la base.
-    -   **Integración Global (`app/layout.tsx`):** Se importó y añadió `<Footer />` al final del layout global, para que aparezca en todas las páginas del sitio.
+    -   **Data (Imágenes):** Se reemplazaron imágenes de placeholder por fotos reales del catálogo. También se actualizó la imagen de bandera personalizada a `/Product/Perzonalizado.jpeg`.
+    -   **Data (businessHours):** Se agregaron los horarios divididos: Lunes a Viernes 9:00 - 13:00 / 17:00 - 20:00, Sábados y Domingos Cerrado.
+    -   **Componente Footer (`components/layout/Footer.tsx`):** Construcción de un Footer avanzado y premium estructurado en 3 columnas:
+        -   **Fondo:** Glassmorphism oscuro (`bg-neutral-950/80` y `backdrop-blur-xl`) con overlay radial para destacar el contenido.
+        -   **Columna Izquierda:** Título "Dónde Estamos", icono con glow naranja y link a Mapas.
+        -   **Columna Central:** Título de marca "EMPERATRIZ" (font Cinzel degradada) e iconos sociales minimalistas con animaciones glow (Facebook, Instagram y WhatsApp).
+        -   **Columna Derecha:** Título "Horarios" e inyección de variables dinámicas `businessHours`.
+        -   **Base:** Copyright dinámico 2026 "Emperatriz Gráfica".
+        -   **Firma Creador:** Componente de marca "IMPERIA VIRTUAL" destacado con colores degradados desde plata a dorado y subrayado glowing animado al hacer hover.
+    -   **Integración Global (`app/layout.tsx`):** Se añadió `<Footer />` en el nivel superior para herencia global. Se implementó un padding inferior extra (`pb-32`) compensando superposiciones con el menú de navegación flotante nativo de la app.
 
 
