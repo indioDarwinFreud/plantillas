@@ -4,6 +4,7 @@ import { contactData, businessHours } from "@/data";
 import { Clock, MapPin } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
 import Link from "next/link";
+import Image from "next/image";
 
 const Footer = () => {
     const locationData = contactData.find(c => c.title === "Ubicación");
@@ -47,9 +48,17 @@ const Footer = () => {
                         {/* Decorative line top */}
                         <div className="hidden md:block absolute top-0 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
 
-                        {/* Elegant Brand Mark */}
-                        <div className="font-cinzel text-3xl font-bold tracking-[0.25em] uppercase text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-200 to-gray-500 drop-shadow-lg">
-                            Emperatriz
+                        {/* Elegant Brand Logo */}
+                        <div className="relative w-72 h-32 group-hover:scale-105 transition-transform duration-500 hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+                            <Image
+                                src="/icono/LogoDos.png"
+                                alt="Logo Emperatriz"
+                                fill
+                                className="object-contain"
+                                style={{
+                                    filter: "drop-shadow(0 0 10px rgba(255,255,255,0.8)) drop-shadow(0 0 20px rgba(255,255,255,0.4))",
+                                }}
+                            />
                         </div>
 
                         {/* Premium Social Icons */}

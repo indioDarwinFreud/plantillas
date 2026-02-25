@@ -159,7 +159,7 @@ export const productsData = [
     },
     {
         id: 15,
-        title: "Banner de 1,5mx2",
+        title: "Banner de 1,5mx2m",
         location: "1,5m x 1,5m",
         description: "Es perfecta como fondo para fotos, decoración de eventos y cartelería con buena presencia visual.",
         image: "/Product/Altoque.jpeg",
@@ -217,6 +217,24 @@ export const productsData = [
         location: "3m x 1,5m",
         description: "Ideal para escenarios, eventos grandes y promociones principales que requieren máxima visibilidad.",
         image: "/Product/3mx1_5mBanner.jpeg",
+        category: "Banner",
+        website: "/contact"
+    },
+    {
+        id: 22,
+        title: "Banner de 3,5m x 1,5m",
+        location: "3,5m x 1,5m",
+        description: "Ideal para escenarios, eventos grandes y promociones principales que requieren máxima visibilidad.",
+        image: "/Product/3_5m1_5m.jpeg",
+        category: "Banner",
+        website: "/contact"
+    },
+    {
+        id: 23,
+        title: "Banner de ?m x ?m",
+        location: "?m x ?m",
+        description: "Ideal para escenarios, eventos grandes y promociones principales que requieren máxima visibilidad.",
+        image: "/Product/PerzonilizadoBanner.jpeg",
         category: "Banner",
         website: "/contact"
     },

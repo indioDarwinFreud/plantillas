@@ -155,4 +155,10 @@
         -   **Firma Creador:** Componente de marca "IMPERIA VIRTUAL" destacado con colores degradados desde plata a dorado y subrayado glowing animado al hacer hover.
     -   **Integración Global (`app/layout.tsx`):** Se añadió `<Footer />` en el nivel superior para herencia global. Se implementó un padding inferior extra (`pb-32`) compensando superposiciones con el menú de navegación flotante nativo de la app.
 
+*   **24/02/2026:** Re-estructuración limpia del Footer y creación del Navbar V2 (Premium Dashboard Style).
+    -   **Rollback Estético (Footer):** Se preservó el estilo "limpio" original de tres columnas sin tarjetas envolventes para garantizar sobriedad de UI, usando textos directos sobre el glassmorphism global con la línea radial glow.
+    -   **Logotipo (Footer):** Sustitución del texto base por imagen oficial "LogoDos.png" en formato plano horizontal para anclar mejor la marca visual. Efecto de elevación (`translateY`) y sombra de luz blanca on-hover.
+    -   **Navbar V2 (The Nucleus Design):** Segmentación simétrica de los items de navegación insertando un elemento ancla "Master" divisorio.
+    -   **Sello Maestral "IV":** Círculo contenedor gigante (`w-[4.8rem]`) fuera del flujo del bloque (`position: absolute`) anidando las siglas Cinzel texturizadas de Imperia Virtual. Flote por encima de la cápsula (`-translateY`) para generar efecto dominancia de cabina de mando.
+    -   **Slim Navbar Wrap:** Reducción intensa del padding-Y de la pastilla contenedora a la mitad base (`py-1.5`) para afinar drásticamente sus bordes y forzar que el ícono IV rebase generosamente cortando la silueta horizontal de borde a borde.
 
