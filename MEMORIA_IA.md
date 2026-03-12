@@ -5,6 +5,12 @@
 **Rol:** Asistente de Programación Full Stack & Compañero de Equipo
 **Lema:** "Traducimos códigos binarios para que se entiendan las cosas."
 
+## Directivas Estrictas (Reglas de Oro)
+1.  **Autenticidad de Datos TOTAL:** NUNCA inventar datos de ninguna forma (reseñas, nombres, testimonios, precios, etc.). Siempre preguntar al usuario ante la duda o falta de información real.
+2.  **Eficiencia de Proceso:** No grabar ni documentar procesos de trabajo (screenshots/recordings de pasos intermedios) a menos que sea pedido explícitamente, para no perder tiempo.
+3.  **Documentación en Español:** Todos los planes de implementación (`implementation_plan.md`), listas de tareas (`task.md`) y documentación de trabajo deben redactarse íntegramente en español para mantener la coherencia y claridad con el usuario.
+4.  **Educación Continua:** Ante una corrección del usuario, actualizar esta memoria inmediatamente para no repetir errores.
+
 ## Preferencias del Usuario
 1.  **Idioma:** Español Latino (Argentino/Informal) - **EXCLUYENTE**. No usar "chaval", "os", "vosotros", etc. Usemos "che", "viste", "mirá", o un neutro latino profesional.
 2.  **Estilo de Trabajo:** "Somos un buen equipo".
@@ -24,11 +30,10 @@
 *   **Stack:** Next.js, Tailwind CSS, Framer Motion/Swiper.
 *   **Diseño:** Fuertes tintes "Racing/Industrial". Uso de `FeatureCard` y `RacingBackground`. Elementos glassmorphism.
 
-## Notas Técnicas Generales
-*   Usar `Swiper` para carruseles.
-*   Imágenes en `public/` (JPG/SVG/GIF).
-*   Evitar videos pesados, preferir GIFs o embeds.
-*   **Navegación ("The Nucleus Design"):** La "Isla de Cristal" o pastilla de navegación (Navbar) usa efectos de anillo flotante y centrado estricto `position: absolute; top-1/2; left-1/2; -translate-x-1/2; -translate-y-1/2` para el master icon central (IV / EG) garantizando una simetría impecable en cualquier dispositivo.
+## Notas Técnicas Generales (Estandarización)
+*   **Separación de Responsabilidades:** Los datos de secciones (testimonios, productos, etc.) deben externalizarse a archivos específicos en la carpeta `data/`.
+*   **Estilos Swiper:** Los estilos personalizados de carruseles deben residir en `app/globals.css` para evitar CSS incrustado en componentes.
+*   **Navegación ("The Nucleus Design"):** La "Isla de Cristal" o pastilla de navegación (Navbar) usa efectos de anillo flotante y centrado estricto para el master icon central (IV / EG).
 *   **Tipografía:**
     *   Títulos/Logos (PlantillaProducto): **Cinzel** (Google Fonts).
     *   Cuerpo/General (Ambos): **Urbanist** (Google Fonts).
@@ -50,7 +55,7 @@
 *   **29/01/2026:** Estilización "Naranja Imperatriz" para las tarjetas de "Quiénes Somos" garantizando alineación premium y contraste. (PlantillaProducto)
 
 **Febrero 2026 (Refinamiento y Deployments)**
-*   **09/02/2026:** Refactor integral de Contacto. Redirección WhatsApp-First, eliminando fricción. Arquitectura consolidada (`RacingCardContainer.tsx`, `InfoCard.tsx`). Mantenimiento de Next.js (error "Element type is invalid" fix). (PlantillaProducto)
+*   **09/02/2026:** Refactor integral de Contacto. Redirección WhatsApp-First, eliminando fricción. Arquitectura consolidada (`RacingCardContainer.tsx`, `InfoCard.tsx`). Mantenimiento de Next.js (error "Element type is invalid" fix). (Emperatriz)
 *   **10/02/2026:** Repositorio subido a GitHub y deploys base en Render. Organización final de componentes (`layout/`, `sections/`, `cards/`, `ui/`). (PlantillaProducto)
 *   **15/02/2026:** Reorganización profunda de `imperia-virtual`. Creación de `ESTRUCTURA_PROYECTO.md`. Fix de rutas muertas. (Imperia Virtual)
 *   **16/02/2026:** Estandarización de documentación base creando `DOCUMENTACION_TECNICA.md` en ambos repositorios. Integración de la filosofía WhatsApp-First para todo canal de contacto orgánico (removido mail en forma nativa). (Global)
@@ -105,7 +110,7 @@
     - **[UNIFICACIÓN DE PRODUCTOS]**: Se consolidó toda la UI de los productos en un único componente `ProductCard.tsx`. Esto garantiza que cualquier cambio de diseño, botón o color se replique instantáneamente en la Home y en el Catálogo.
     - **[SISTEMA DE TEMAS]**: Se refactorizó el `config.ts` para soportar una biblioteca de temas (`SILVER_PREMIUM`, `GOLD_EMPIRE`, `ELECTRIC_BLUE`). Ahora basta con cambiar una variable para mutar la identidad visual de toda la web.
     - **[EFECTOS NEÓN]**: Se integraron efectos de "luz de neón" (bordes brillantes y resplandores) en los cuadros de descripción de "Sobre Nosotros" y en el botón principal de WhatsApp en "Contacto". Estos efectos son dinámicos y cambian de color según el tema activo.
-    - **[COMPONENTE REUTILIZABLE]**: Se creó el componente `<NeonButton />` que encapsula la estética de "rectángulo de luz" transparente con borde plateado y resplandor neón de alto impacto. Este componente se integró en el Hero y en el formulario de Contacto, centralizando la lógica visual.
+    - **[COMPONENTE REUTILIZABLE]**: Se creó el componente `<NeonButton />` que encapsula la estética de "rectángulo de luz" transparente con borde plateado and resplandor neón de alto impacto. Este componente se integró en el Hero y en el formulario de Contacto, centralizando la lógica visual.
     - **[ASSETS VISUALES PREMIUM]**: Se generaron e integraron texturas de alta resolución para los fondos globales (`silver_bg`, `gold_bg`, `blue_bg`). Se implementó un modo de mezcla (`multiply/overlay`) para fusionar estas texturas con los degradados base, aportando profundidad táctil sin romper la estética original.
     - **[GLASSMORPISM & SVG CLEANUP]**: 
         - Se dio el salto al **Glassmorphism** completo: todas las tarjetas poseen ahora fondos semi-transparentes coordinados con el tema y efecto de desenfoque de fondo (`backdrop-blur-md`).
@@ -123,6 +128,11 @@
         2.  **Noise Overlay**: Por encima del blur, se inyectó una capa SVG generada por código (`feTurbulence`) con `mix-blend-overlay` y opacidad mínima (`0.03`). Esto aporta un "grano fotográfico" o textura física ultra realista de alta resolución infinita que camufla perfectamente cualquier defecto subyacente de low-res y eleva dramáticamente el "Wow factor" del sitio web.
     - **[EFECTO FUMIGADO FOOTER]**: Se corrigió el efecto de fondo desenfocado en el `Footer.tsx`. Se aisló el estilo `filter: blur(20px)` y `transform: scale(1.05)` en un contenedor absoluto interior (`-z-10`) para evitar desenfocar de forma heredada los textos y logos, asegurando legibilidad perfecta.
     - **[CAMBIO DE IDENTIDAD]**: Se configuró como tema activo de la plantilla el `ELECTRIC_BLUE`.
+
+*   **12/03/2026 - Sincronización Global de Memorias:**
+    *   **Refactorización Senior:** Estandarización de arquitectura en todo el ecosistema. Se impulsó la separación de responsabilidades (datos en `/data`, estilos en `globals.css`) para componentes complejos.
+    *   **Directivas Globales:** Sincronización de reglas de oro (No inventar datos, Documentación en Español, Eficiencia de proceso) en todos los proyectos de la red Imperia.
+    *   **Interactividad Premium:** Implementación de carruseles avanzados con tarjetas CTA integradas y leyendas inteligentes para mejorar la conversión y UX.
 
 *   **09/03/2026 - Unificación Visual y Refinamiento Premium:**
     - **[LIMPIEZA DE DATOS]**: Se eliminó la propiedad `category` de los productos en `data.tsx` y se comentó en `types/index.ts` para simplificar la estructura de datos y evitar distracciones visuales (tabs/filtros) en el catálogo.
