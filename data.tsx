@@ -15,9 +15,9 @@
  * ============================================================
  */
 
-import { HomeIcon, Store, Users, Mail, MessageSquareQuote, ShieldCheck, MapPin, Facebook, Instagram, Phone } from "lucide-react";
+import { HomeIcon, Store, Mail, MapPin, Facebook, Instagram, Phone, BookOpen, Image as ImageIcon } from "lucide-react";
 import { siteConfig } from "./config";
-import type { NavItem, Product, Testimonial, ContactItem, BusinessHour } from "./types";
+import type { NavItem, Product, Testimonial, ContactItem, BusinessHour, Chapter, Artwork } from "./types";
 
 // ============================================================
 // MENÚ DE NAVEGACIÓN
@@ -31,21 +31,21 @@ export const itemsNavbar: NavItem[] = [
     },
     {
         id: 2,
-        title: "Productos",
-        icon: <Store size={25} strokeWidth={1} />,
-        link: "/products",
+        title: "Historieta",
+        icon: <BookOpen size={25} strokeWidth={1} />,
+        link: "/historieta",
     },
     {
         id: 3,
-        title: "Quiénes Somos",
-        icon: <Users size={25} strokeWidth={1} />,
-        link: "/about",
+        title: "Arte",
+        icon: <ImageIcon size={25} strokeWidth={1} />,
+        link: "/arte",
     },
     {
         id: 4,
-        title: "Contacto",
-        icon: <Mail size={25} strokeWidth={1} />,
-        link: "/contact",
+        title: "Tienda",
+        icon: <Store size={25} strokeWidth={1} />,
+        link: "/productos",
     },
 ];
 
@@ -61,61 +61,126 @@ export const itemsNavbar: NavItem[] = [
 //   5. El botón "WhatsApp" se arma automáticamente con el nombre
 //      del producto y el teléfono de config.ts.
 // ============================================================
-export const productsData: Product[] = [
+export const chaptersData: Chapter[] = [
     {
         id: 1,
-        title: "Edición Limitada Alpha",
-        location: "Colección Exclusiva",
-        description: "Diseño minimalista con acabados premium. Ideal para quienes buscan exclusividad y elegancia en cada detalle.",
-        image: "/placeholder.svg",
-       
-        website: "/contact",
+        title: {
+            es: "Volumen 1: La Caída",
+            en: "Volume 1: The Fall"
+        },
+        description: {
+            es: "El cielo se oscureció sobre Mogadishu. La sangre tiñó la arena.",
+            en: "The sky darkened over Mogadishu. Blood stained the sand."
+        },
+        coverImage: "/WhatsApp Image 2026-03-27 at 20.39.49.jpeg",
+        pages: {
+            es: [
+                "/WhatsApp Image 2026-03-27 at 20.39.49.jpeg",
+                "/WhatsApp Image 2026-03-27 at 20.39.51.jpeg"
+            ],
+            en: [
+                "/WhatsApp Image 2026-03-27 at 20.39.49.jpeg",
+                "/WhatsApp Image 2026-03-27 at 20.39.51.jpeg"
+            ]
+        }
     },
     {
         id: 2,
-        title: "Serie Beta Essential",
-        location: "Línea Clásica",
-        description: "La combinación perfecta entre funcionalidad y estética. Un producto pensado para el uso diario sin perder el estilo.",
-        image: "/placeholder.svg",
-        
-        website: "/contact",
-    },
-    {
-        id: 3,
-        title: "Gamma Signature",
-        location: "Edición de Autor",
-        description: "Fabricado con materiales de la más alta calidad, representando el pináculo de nuestro diseño y manufactura.",
-        image: "/placeholder.svg",
-        
-        website: "/contact",
-    },
-    {
-        id: 4,
-        title: "Delta Vanguard",
-        location: "Innovación Pura",
-        description: "Líneas modernas y tecnología de vanguardia fusionadas en un solo producto que redefine los estándares actuales.",
-        image: "/placeholder.svg",
-        
-        website: "/contact",
-    },
-    {
-        id: 5,
-        title: "Omega Classic",
-        location: "Atemporal",
-        description: "El diseño que nunca pasa de moda. Simple, directo y construido para durar por generaciones.",
-        image: "/placeholder.svg",
-        
-        website: "/contact",
+        title: {
+            es: "Volumen 2: El Despertar del Pantano",
+            en: "Volume 2: Awakening of the Swamp"
+        },
+        description: {
+            es: "Lo que estaba muerto se levantó en la espesura del horror.",
+            en: "What was dead rose in the thicket of horror."
+        },
+        coverImage: "/WhatsApp Image 2026-03-27 at 20.41.57.jpeg",
+        pages: {
+            es: [
+                "/WhatsApp Image 2026-03-27 at 20.41.57.jpeg"
+            ],
+            en: [
+                "/WhatsApp Image 2026-03-27 at 20.41.57.jpeg"
+            ]
+        }
     },
     {
         id: 6,
-        title: "Zenith Pro",
-        location: "Alto Rendimiento",
-        description: "Para los usuarios más exigentes. Cada aspecto ha sido optimizado para entregar el máximo rendimiento posible.",
-        image: "/placeholder.svg",
-        
-        website: "/contact",
+        title: {
+            es: "Volumen 6: El Regreso",
+            en: "Volume 6: The Return"
+        },
+        description: {
+            es: "Las sombras regresan a Mogadishu.",
+            en: "Shadows return to Mogadishu."
+        },
+        coverImage: "/PHistorieta/Español/CapituloSeisPortada.png",
+        pages: {
+            es: [
+                "/PHistorieta/Español/CapituloSeisPortada.png"
+            ],
+            en: [
+                "/PHistorieta/Ingles/ChapterSixPortada.png"
+            ]
+        }
+    }
+];
+
+// ============================================================
+// GALERÍA DE ARTE VISUAL
+// ============================================================
+export const artData: Artwork[] = [
+    {
+        id: 1,
+        title: "El Desollado",
+        description: "Músculo y Sangre en técnica analógica.",
+        image: "/WhatsApp Image 2026-03-27 at 20.39.52.jpeg"
     },
+    {
+        id: 2,
+        title: "Resurrección Pútrida",
+        description: "El zombie del infierno terrenal.",
+        image: "/WhatsApp Image 2026-03-27 at 20.39.52 (1).jpeg"
+    },
+    {
+        id: 3,
+        title: "El Cosechador del Pantano",
+        description: "Un horror esquelético que acecha desde las aguas sucias.",
+        image: "/WhatsApp Image 2026-03-27 at 20.41.57.jpeg"
+    }
+];
+
+// ============================================================
+// PRODUCTOS DEL CATÁLOGO / TIENDA DE MERCHANDISING
+// ============================================================
+export const productsData: Product[] = [
+    {
+        id: 1,
+        title: "Remera 'Gothic Serpent' — Negra",
+        location: "Indumentaria Limitada",
+        description: "Edición especial. Diseño oficial de Operation Gothic Serpent en negro absoluto. Calidad premium, envío internacional.",
+        image: "/PProductos/1774291194951.JPEG",
+        website: "/contact",
+        price: 50.00,
+    },
+    {
+        id: 2,
+        title: "Remera 'Mogadishu' — Edición Guerra",
+        location: "Indumentaria Limitada",
+        description: "Ilustración cruda de la Batalla de Mogadishu. Estampado frontal en sangre y sepia. Envío internacional.",
+        image: "/PProductos/1774495035187.JPEG",
+        website: "/contact",
+        price: 50.00,
+    },
+    {
+        id: 3,
+        title: "Remera 'El Desollado' — Gris Militar",
+        location: "Indumentaria Limitada",
+        description: "El icónico personaje del infierno terrenal. Gris militar con estampado artístico de alta resolución.",
+        image: "/PProductos/1774539844839.JPEG",
+        website: "/contact",
+        price: 50.00,
+    }
 ];
 
 // ============================================================

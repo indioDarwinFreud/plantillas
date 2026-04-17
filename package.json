@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@paypal/react-paypal-js": "^9.1.1",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.7.1",
     "clsx": "^2.1.1",
@@ -22,7 +23,8 @@
     "swiper": "^11.2.1",
     "tailwind-merge": "^3.4.0",
     "three": "^0.134.0",
-    "vanta": "^0.5.24"
+    "vanta": "^0.5.24",
+    "zustand": "^5.0.12"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

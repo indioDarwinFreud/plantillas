@@ -29,8 +29,38 @@ export interface Product {
     //category: string;
     /** Link al que lleva el botón de la tarjeta (puede ser /contact o URL externa) */
     website: string;
-    /** Precio opcional para mostrar en la tarjeta */
-    price?: string;
+    /** Precio en USD (ej: 50.00) */
+    price?: number;
+}
+
+// -------------------------------------------------------
+// Capítulo de la Historieta — usado en chaptersData
+// -------------------------------------------------------
+export interface Chapter {
+    id: number;
+    title: {
+        es: string;
+        en: string;
+    };
+    description: {
+        es: string;
+        en: string;
+    };
+    coverImage: string;
+    pages: {
+        es: string[];
+        en: string[];
+    };
+}
+
+// -------------------------------------------------------
+// Obra de Arte — usado en artData
+// -------------------------------------------------------
+export interface Artwork {
+    id: number;
+    title: string;
+    description: string;
+    image: string;
 }
 
 // -------------------------------------------------------

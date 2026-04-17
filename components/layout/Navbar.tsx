@@ -36,7 +36,7 @@ const Navbar = () => {
 
                         {/* Large Circle container positioned absolute to not stretch the thin navbar */}
                         {/* Enlace directo a Imperia Virtual */}
-                        <a href="https://imperiavirtual.com" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[4.2rem] h-[4.2rem] md:w-[4.8rem] md:h-[4.8rem] rounded-full bg-black/90 border border-primary/50 flex items-center justify-center z-20 
+                        <a href="https://imperiavirtual.com.ar" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[4.2rem] h-[4.2rem] md:w-[4.8rem] md:h-[4.8rem] rounded-full bg-black/90 border border-primary/50 flex items-center justify-center z-20 
                             shadow-[0_4px_25px_rgba(192,192,192,0.4)] hover:shadow-[0_8px_35px_rgba(192,192,192,0.7)] 
                             hover:scale-105 transition-all duration-500 cursor-pointer group">
 

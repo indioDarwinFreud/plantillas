@@ -17,10 +17,10 @@ export const siteConfig = {
     // 1. Identidad de Marca Principal
     //    → Cambiá name, shortName y description para el nombre del negocio.
     // ---------------------------------------------------------------------------
-    name: "Plantilla Producto",
-    shortName: "Plantilla",
-    description: "La mejor solución para presentar tus productos de manera premium.",
-    url: "https://plantillaproducto.com",
+    name: "Operation Gothic Serpent",
+    shortName: "Gothic Serpent",
+    description: "Novela gráfica de guerra, horror y supervivencia ilustrada en crudo blanco, negro y sangre.",
+    url: "https://operationgothicserpent.com",
 
     // ---------------------------------------------------------------------------
     // 2. Tipografía del Sitio
@@ -69,26 +69,26 @@ export const siteConfig = {
             cardImage: "data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'%3E%3Ccircle cx='2' cy='2' r='1'/%3E%3Ccircle cx='22' cy='22' r='1'/%3E%3C/g%3E%3C/svg%3E"
         },
 
-        // TEMA 2: GOLD EMPIRE (Lujoso - Negro y Dorado)
+        // TEMA 2: GOLD EMPIRE -> GOTHIC SERPENT (Pitch Black & Blood Red)
         GOLD_EMPIRE: {
-            primaryColor: "#D4AF37", // Oro Clásico
-            primaryHover: "#B8860B", // Oro Oscuro
-            backgroundMain: "linear-gradient(160deg, #000000 0%, #1a1a1a 100%)",
-            backgroundColor: "#000000", // Base sólida para blending
-            backgroundCard: "rgba(26, 26, 26, 0.8)", // Negro lujo semitransparente
-            backgroundFooter: "linear-gradient(160deg, #000000 0%, #1a1a1a 100%)",
-            radius: "0.5rem",
+            primaryColor: "#990000", // Rojo Sangre (Botones/Acciones)
+            primaryHover: "#660000", // Sangre oscura
+            backgroundMain: "#000000", // Pitch Black
+            backgroundColor: "#000000", // Negro absoluto
+            backgroundCard: "rgba(10, 10, 10, 0.9)", // Tarjetas casi negras con leve vidrio
+            backgroundFooter: "#000000",
+            radius: "0rem", // Bordes rectos para dar crudeza militar/cómic
             navbarStyle: "nucleus" as const,
             textColors: {
-                primaryLight: "#FFFFFF",
-                secondaryLight: "#D4AF37",
+                primaryLight: "#FFFFFF", // Alto contraste
+                secondaryLight: "#A67C00", // Dorado Envejecido / Sepia
                 cardTitle: "#FFFFFF",
-                cardBody: "#E5E7EB",
-                cardMuted: "#9CA3AF"
+                cardBody: "#D1D5DB",
+                cardMuted: "#6B7280"
             },
-            backgroundImage: "/assets/backgrounds/gold_bg.png",
-            // Patrón de tejido de lujo en oro para consistencia
-            cardImage: "data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l30 30-30 30L0 30z' fill='%23D4AF37' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E"
+            backgroundImage: "", // Borramos background texture para dejar que el negro explote con los SVG
+            // Patrón de ruido sucio o cuadrícula oscura para tarjetas
+            cardImage: "data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.02' fill-rule='evenodd'%3E%3Ccircle cx='2' cy='2' r='1'/%3E%3Ccircle cx='22' cy='22' r='1'/%3E%3C/g%3E%3C/svg%3E"
         },
 
         // TEMA 3: ELECTRIC BLUE (Tecnológico - Azul y Cyan)
@@ -116,7 +116,7 @@ export const siteConfig = {
 
     // ESTO ELIGE EL TEMA ACTIVO
     // Podés cambiarlo a: "SILVER_PREMIUM", "GOLD_EMPIRE" o "ELECTRIC_BLUE"
-    activeTheme: "SILVER_PREMIUM" as const,
+    activeTheme: "GOLD_EMPIRE" as const,
 
     get theme() {
         return this.themes[this.activeTheme];

@@ -1,148 +1,113 @@
 "use client";
 
-import { contactData, businessHours } from "@/data";
-import { Clock, MapPin } from "lucide-react";
+import { contactData } from "@/data";
+import { MapPin, Mail, Phone, ExternalLink } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
 import Link from "next/link";
 import Image from "next/image";
 import { siteConfig } from "@/config";
+import Separador from "@/components/ui/separador";
 
 /**
- * Footer — Pie de página global premium
- * Grilla de 3 columnas: Ubicación | Logo + Redes | Horarios.
- * Al fondo muestra el Copyright y la firma "Creado por Imperia Virtual".
- *
- * Datos: `contactData` y `businessHours` de data.tsx.
- * Estilo: fondo y color primario de config.ts → theme.backgroundFooter / primaryColor.
+ * Footer — Pie de página global adaptado a Gothic Serpent
+ * Muestra CTA de Contacto, Redes Sociales integradas y Copyright.
  */
 const Footer = () => {
     const locationData = contactData.find(c => c.title === "Ubicación");
-    const socialData = contactData.filter(c => c.title === "Facebook" || c.title === "Instagram" || c.title === "Teléfono");
+    const socialData = contactData.filter(c => c.title === "Facebook" || c.title === "Instagram");
+    const emailData = contactData.find(c => c.title === "Email");
+    const phoneData = contactData.find(c => c.title === "Teléfono");
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer
-            className="w-full backdrop-blur-xl py-12 md:py-20 border-t border-primary/30 relative overflow-hidden shadow-[0_-10px_40px_-15px_rgba(192,192,192,0.15)]"
-        >
-            {/* Capa de fondo "Fumigada" aislada para no desenfocar el texto */}
-            <div 
-                className="absolute inset-0 pointer-events-none -z-10"
-                style={{
+        <footer className="w-full bg-[#050505] border-t border-[#1a1a1a] relative overflow-hidden text-[#9CA3AF]">
+            {/* CTA de Contacto / Enlistamiento */}
+            <div className="w-full bg-[#0A0A0A] border-b border-[#1a1a1a] py-16">
+                <div className="max-w-4xl mx-auto px-6 text-center">
+                    <h3 className="text-3xl font-black uppercase tracking-widest text-[#FFFFFF] drop-shadow-lg mb-4" style={{ fontFamily: siteConfig.typography.fontHeading }}>
+                        Comunicaciones <span className="text-[#990000]">Tácticas</span>
+                    </h3>
+                    <Separador className="mx-auto mb-6" />
+                    <p className="font-urbanist text-lg text-[#9CA3AF] mb-10 max-w-2xl mx-auto">
+                        Para consultas editoriales, encargos de commissions o adquisición de arte original, establecé contacto por nuestras líneas oficiales.
+                    </p>
+
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                        {phoneData && (
+                            <Link href={phoneData.href} target="_blank" className="flex items-center gap-3 w-full sm:w-auto px-8 py-4 bg-[#990000] text-white font-bold tracking-[0.2em] uppercase border border-[#990000] hover:bg-black hover:text-[#990000] transition-colors duration-300">
+                                <Phone size={20} /> Transmisión Segura
+                            </Link>
+                        )}
+                        {emailData && (
+                            <Link href={emailData.href} className="flex items-center gap-3 w-full sm:w-auto px-8 py-4 bg-transparent text-[#A67C00] font-bold tracking-[0.2em] uppercase border border-[#A67C00] hover:bg-[#A67C00] hover:text-black transition-colors duration-300">
+                                <Mail size={20} /> Despacho Escrito
+                            </Link>
+                        )}
+                    </div>
+                </div>
+            </div>
+
+            {/* Footer Base */}
+            <div className="max-w-7xl mx-auto px-6 py-16 relative z-10">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center justify-between text-center md:text-left mb-16">
                     
-                    filter: 'blur(20px)',     /* Difumina los píxeles grandes */
-                    transform: 'scale(1.05)'  /* Escala para evitar los bordes blancos del blur */
-                }}
-            />
-
-            {/* Premium Gradient Overlay with Radial Glow */}
-
-
-            <div className="max-w-6xl mx-auto px-6 relative z-10">
-
-                {/* Main Content Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-14 md:gap-8 items-start justify-between text-center md:text-left mb-16">
-
-                    {/* Column 1: Location */}
-                    <FadeIn delay={0.1} className="flex flex-col items-center md:items-start space-y-5">
-                        <div className="flex items-center space-x-3 text-primary mb-1">
-                            <MapPin className="w-6 h-6 drop-shadow-[0_0_8px_rgba(192,192,192,0.8)]" />
-                            <h4 className="font-gotham font-black uppercase tracking-[0.2em] text-sm text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
-                                Dónde Estamos
+                    {/* Ubicación */}
+                    <FadeIn delay={0.1} className="flex flex-col items-center md:items-start space-y-4">
+                        <div className="flex items-center space-x-3 text-[#A67C00] mb-1">
+                            <MapPin className="w-6 h-6" />
+                            <h4 className="font-bold uppercase tracking-[0.2em] text-sm text-[#FFFFFF]" style={{ fontFamily: siteConfig.typography.fontAlt }}>
+                                Comando Central
                             </h4>
                         </div>
                         {locationData && (
-                            <Link
-                                href={locationData.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="font-urbanist text-gray-400 hover:text-white transition-all hover:translate-x-2 transform duration-300 max-w-[260px] leading-relaxed"
-                            >
-                                {locationData.description}
-                                <span className="block mt-2 text-primary/70 text-xs font-semibold uppercase tracking-wider hover:text-primary transition-colors">Ver en mapa &rarr;</span>
+                            <Link href={locationData.href} target="_blank" className="font-urbanist text-[#6B7280] hover:text-[#FFFFFF] transition-all duration-300">
+                                {locationData.description} <ExternalLink className="inline-block ml-1 w-3 h-3" />
                             </Link>
                         )}
                     </FadeIn>
 
-                    {/* Column 2: Logo & Social (Center) */}
-                    <FadeIn delay={0.2} className="flex flex-col items-center justify-center space-y-8 md:border-x border-white/5 md:px-8 relative">
-                        {/* Decorative line top */}
-                        <div className="hidden md:block absolute top-0 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
-
-                        {/* Elegant Brand Logo */}
-                        <div className="relative w-72 h-32 group-hover:scale-105 transition-transform duration-500 hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+                    {/* Logo & Social */}
+                    <FadeIn delay={0.2} className="flex flex-col items-center justify-center space-y-6">
+                        <div className="relative w-48 h-20 opacity-80 hover:opacity-100 transition-opacity duration-300">
                             <Image
                                 src={siteConfig.logo.main}
                                 alt={`Logo ${siteConfig.name}`}
                                 fill
-                                className="object-contain"
-                                style={{
-                                    filter: "drop-shadow(0 0 10px rgba(255,255,255,0.8)) drop-shadow(0 0 20px rgba(255,255,255,0.4))",
-                                }}
+                                className="object-contain grayscale contrast-200 brightness-200"
                             />
                         </div>
-
-                        {/* Premium Social Icons */}
                         {socialData.length > 0 && (
                             <div className="flex space-x-6">
                                 {socialData.map((social) => (
-                                    <Link
-                                        key={social.id}
-                                        href={social.href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="p-3 rounded-full border border-white/10 bg-black/40 text-gray-400 hover:text-white hover:bg-primary/20 hover:border-primary/60 hover:shadow-[0_0_15px_rgba(192,192,192,0.4)] transition-all duration-300 group"
-                                        aria-label={social.title}
-                                    >
-                                        <social.icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                                    <Link key={social.id} href={social.href} target="_blank" className="p-3 bg-black border border-[#333333] text-[#A67C00] hover:text-white hover:bg-[#990000] hover:border-[#990000] transition-all duration-300">
+                                        <social.icon className="w-5 h-5" />
                                     </Link>
                                 ))}
                             </div>
                         )}
-
-                        {/* Decorative line bottom */}
-                        <div className="hidden md:block absolute bottom-0 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
                     </FadeIn>
 
-                    {/* Column 3: Business Hours */}
-                    <FadeIn delay={0.3} className="flex flex-col items-center md:items-end space-y-5">
-                        <div className="flex items-center space-x-3 text-primary mb-1">
-                            <Clock className="w-6 h-6 drop-shadow-[0_0_8px_rgba(192,192,192,0.8)]" />
-                            <h4 className="font-gotham font-black uppercase tracking-[0.2em] text-sm text-transparent bg-clip-text bg-gradient-to-l from-white to-gray-400">
-                                Horarios
-                            </h4>
-                        </div>
-                        <div className="flex flex-col items-center md:items-end space-y-3 w-full">
-                            {businessHours.map((schedule, index) => (
-                                <div key={index} className="flex flex-col items-center md:items-end w-full group">
-                                    <span className="font-urbanist font-bold text-gray-200 text-sm tracking-widest group-hover:text-white transition-colors">{schedule.day}</span>
-                                    <span className="font-urbanist text-gray-400 font-medium text-sm mt-0.5 group-hover:text-primary transition-colors">{schedule.hours}</span>
-                                </div>
-                            ))}
+                    {/* Aviso */}
+                    <FadeIn delay={0.3} className="flex flex-col items-center md:items-end space-y-4">
+                        <div className="text-right">
+                           <h4 className="font-bold uppercase tracking-[0.2em] text-sm text-[#777777] mb-2" style={{ fontFamily: siteConfig.typography.fontAlt }}>Advertencia</h4>
+                           <p className="font-urbanist text-[#555555] text-xs uppercase tracking-wider max-w-[200px] leading-relaxed">
+                               Visualizar este material bajo riesgo propio. Horror gráfico asegurado.
+                           </p>
                         </div>
                     </FadeIn>
                 </div>
 
-                {/* Footer Bottom: Signature & Copyright */}
-                <FadeIn delay={0.4} className="w-full pt-8 pb-32 md:pb-8 flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-6 relative mt-8">
-                    {/* Top divider line */}
-                    <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-
-                    <p className="font-urbanist text-gray-500 text-xs tracking-widest uppercase">
-                        &copy; {currentYear} {siteConfig.name}.
+                {/* Bottom Signature */}
+                <FadeIn delay={0.4} className="w-full pt-8 flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-6 border-t border-[#1a1a1a]">
+                    <p className="font-urbanist text-[#444444] text-xs tracking-widest uppercase">
+                        &copy; {currentYear} {siteConfig.name}. Todos los derechos reservados.
                     </p>
 
-                    {/* The Imperia Virtual Signature */}
-                    <div className="font-urbanist text-gray-400 text-xs tracking-widest uppercase flex flex-col md:flex-row items-center gap-2 md:gap-3">
-                        <span>Creado por</span>
-                        <Link
-                            href="https://imperiavirtual.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-primary via-neutral-300 to-primary font-black text-sm md:text-base tracking-[0.2em] transform hover:scale-105 transition-all duration-300 drop-shadow-[0_0_12px_rgba(192,192,192,0.8)] hover:drop-shadow-[0_0_25px_rgba(192,192,192,1)]"
-                        >
+                    <div className="font-urbanist text-[#444444] text-xs tracking-widest uppercase flex items-center gap-2">
+                        <span>Framework by</span>
+                        <Link href="https://imperiavirtual.com" target="_blank" className="font-black text-[#666666] tracking-[0.2em] hover:text-[#990000] transition-colors duration-300">
                             IMPERIA VIRTUAL
-                            {/* Decorative glowing underline */}
-                            <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-80"></span>
                         </Link>
                     </div>
                 </FadeIn>

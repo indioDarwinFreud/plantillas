@@ -8,6 +8,9 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+// CartDrawerWrapper: Client Component que envuelve el CartDrawer con ssr:false.
+// No se puede usar dynamic({ ssr: false }) directamente en un Server Component.
+import CartDrawerWrapper from "@/components/ui/CartDrawerWrapper";
 
 const urbanist = Urbanist({
   subsets: ["latin"],
@@ -25,6 +28,9 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+  ),
   title: siteConfig.name,
   description: siteConfig.description,
   authors: [{ name: siteConfig.seo.author }],
@@ -81,6 +87,9 @@ export default function RootLayout({
 
         <Navbar />
         <Header />
+        {/* CartDrawerWrapper: Panel lateral del carrito de compras. Vive fuera de las páginas
+            para que esté disponible en toda la app sin tener que montarlo por ruta. */}
+        <CartDrawerWrapper />
         {children}
         <Footer />
       </body>

@@ -142,3 +142,18 @@
     - **[PROPIEDAD GLASS]**: Se profesionalizó el código creando la prop `glass` en `RacingCardContainer.tsx`. Esta propiedad centraliza el estilo de transparencia, desenfoque profundo y borde dorado neón. Se añadieron comentarios técnicos detallados en el componente para facilitar su uso.
     - **[UNIFICACIÓN CONTACTO]**: Se aplicó la prop `glass` al formulario de contacto y a todas las `InfoCard.tsx` (Email, Teléfono, etc.), logrando que toda la web comparta el mismo lenguaje visual de "vidrio esmerilado" y opulencia.
     - **[CONFIGURACIÓN]**: El usuario seleccionó el tema `SILVER_PREMIUM` como activo para la sesión final.
+
+**Marzo 2026 (Operation Gothic Serpent)**
+*   **30/03/2026 - Gran Apertura de Operation Gothic Serpent:**
+    -   **[IDENTIDAD]**: El proyecto mutó de una plantilla genérica al sitio oficial de **Operation Gothic Serpent**, una novela gráfica de horror y guerra.
+    -   **[ESTÉTICA DARK/GORIC]**: Se reescribió el tema `GOLD_EMPIRE` para ser **Pitch Black** (#000000), **Rojo Sangre** (#990000) y **Sepia Oxidado** (#A67C00). Se eliminó el redondeo de bordes para una atmósfera táctica y cruda.
+    -   **[DYNAMIC HOME]**: La página principal ahora presenta el póster de Mogadishu a pantalla completa e integra la sinopsis de la obra ("Sobre Nosotros") en un solo scroll.
+    -   **[COMIC READER (PRO)]**: Se creó un visor de cómics íntegramente paginado en 2D (estilo portal profesional) con navegación por capítulos y soporte de teclado (flechas).
+    -   **[GALERÍA DE ARTE]**: Nueva ruta `/arte` con grilla Masonry optimizada para ilustraciones detalladas en alto contraste.
+    -   **[FOOTER CONTACTO]**: Se eliminaron las páginas de /about y /contact para centralizar toda la comunicación ("Comando Táctico") en el footer, garantizando que el usuario nunca pierda el hilo de la historia para contactar al artista.
+    -   **[FIXES]**: Se corrigieron errores de tipos en `Separador` y `ProductCard` para asegurar un build de producción exitoso.
+*   **17/04/2026 - Soporte Multi-Idioma y Capítulo 6:**
+    - **[DATOS]**: Se migró la estructura de `Chapter` para soportar `es` (Español) e `en` (Inglés).
+    - **[CAPÍTULO 6]**: Se integró el Capítulo 6 con las portadas en ambos idiomas.
+    - **[LECTOR]**: Se implementó el selector de idioma (ES/EN) con cambio dinámico.
+    - **[PÁGINA PRINCIPAL]**: Se ajustó la lista de capítulos para el nuevo formato (ES por defecto).

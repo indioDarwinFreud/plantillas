@@ -3,9 +3,11 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { MessageCircle, Ruler } from "lucide-react";
+import { MessageCircle, Ruler, ShoppingCart, Check } from "lucide-react";
 import { siteConfig } from "@/config";
 import type { Product } from "@/types";
+import { useCartStore } from "@/store/cartStore";
+import { useState } from "react";
 
 interface ProductCardProps {
     product: Product;
@@ -22,6 +24,14 @@ interface ProductCardProps {
  */
 export default function ProductCard({ product, onImageClick }: ProductCardProps) {
     const whatsappUrl = `https://wa.me/${siteConfig.contact.phone.replace("+", "")}?text=Hola, me interesa el producto: ${encodeURIComponent(product.title)}`;
+    const { addItem } = useCartStore();
+    const [added, setAdded] = useState(false);
+
+    const handleAddToCart = () => {
+        addItem(product);
+        setAdded(true);
+        setTimeout(() => setAdded(false), 2000);
+    };
 
     return (
         <Card
@@ -58,15 +68,7 @@ export default function ProductCard({ product, onImageClick }: ProductCardProps)
                     </div>
                 )}
 
-                {/* Badge de Categoría */}
-                <div className="absolute top-4 right-4 z-20">
-                    <span
-                        className="text-white text-[10px] font-black px-3 py-1 rounded-full shadow-lg uppercase tracking-wider"
-                        style={{ backgroundColor: siteConfig.theme.primaryColor }}
-                    >
-                        {product.category}
-                    </span>
-                </div>
+                {/* Overlay quitado ya que Category fue deprecado */}
             </div>
 
             {/* Contenido */}
@@ -95,8 +97,29 @@ export default function ProductCard({ product, onImageClick }: ProductCardProps)
                     {product.description}
                 </p>
 
-                {/* Footer de Tarjeta / Botón */}
-                <div className="mt-auto pt-4 border-t border-black/20">
+                {/* Footer de Tarjeta / Botones */}
+                <div className="mt-auto pt-4 border-t border-black/20 flex flex-col gap-2">
+                    {/* Precio */}
+                    {product.price && (
+                        <p className="text-white font-black text-lg">
+                            USD ${product.price.toFixed(2)}
+                        </p>
+                    )}
+
+                    {/* Botón Añadir al Carrito */}
+                    <button
+                        onClick={handleAddToCart}
+                        className={`w-full h-11 font-bold uppercase tracking-wider text-sm flex items-center justify-center gap-2 transition-all duration-300 border
+                            ${ added
+                                ? 'bg-green-900/40 border-green-700 text-green-400'
+                                : 'bg-[#990000]/20 border-[#990000] text-white hover:bg-[#990000]'
+                            }`}
+                    >
+                        {added ? <Check size={16} /> : <ShoppingCart size={16} />}
+                        {added ? "¡Agregado!" : "Añadir al Carrito"}
+                    </button>
+
+                    {/* Botón Consultar por WhatsApp */}
                     <Link
                         href={whatsappUrl}
                         target="_blank"
@@ -104,23 +127,23 @@ export default function ProductCard({ product, onImageClick }: ProductCardProps)
                         className="w-full block"
                     >
                         <Button
-                            className="w-full transition-all duration-300 h-12 font-bold flex items-center justify-center gap-2 shadow-sm hover:shadow-md"
+                            className="w-full h-10 font-bold flex items-center justify-center gap-2 text-xs uppercase tracking-wider"
                             style={{
-                                background: siteConfig.theme.backgroundMain,
-                                color: siteConfig.theme.primaryColor,
-                                border: `1px solid ${siteConfig.theme.primaryColor}30`,
+                                background: "transparent",
+                                color: siteConfig.theme.textColors.cardMuted,
+                                border: `1px solid #333`,
                             }}
                             onMouseOver={(e) => {
-                                e.currentTarget.style.background = siteConfig.theme.primaryColor;
-                                e.currentTarget.style.color = '#021824'; // Fondo oscuro para contraste
+                                e.currentTarget.style.borderColor = "#555";
+                                e.currentTarget.style.color = "#fff";
                             }}
                             onMouseOut={(e) => {
-                                e.currentTarget.style.background = siteConfig.theme.backgroundMain;
-                                e.currentTarget.style.color = siteConfig.theme.primaryColor;
+                                e.currentTarget.style.borderColor = "#333";
+                                e.currentTarget.style.color = siteConfig.theme.textColors.cardMuted;
                             }}
                         >
-                            <MessageCircle size={18} />
-                            Consultar
+                            <MessageCircle size={14} />
+                            Consultar por WhatsApp
                         </Button>
                     </Link>
                 </div>
